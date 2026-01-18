@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>
+      Student Data
+    </title>
+    <meta content="width=device-width" initial-scale="1.0" name="viewport"/>
+  </head>
+  <body>
+    <table border = 1>
+      <tr>
+        <th>
+          Average Marks
+        </th>
+        <th>
+          Maximum Marks
+        </th>
+      </tr>
+
+        {% set average_marks  = 0 %}
+        {% set Maximum_marks  = 0 %}
+
+        {% for keys in dict_name.keys() %}
+          {% if key == {{course_id}}: %}
+                {% set num_of_students  = 0 %}
+                {% set total  = 0 %}
+                
+            {% for keys2, vlaue2 in {{course_id}}.items()%}:
+
+                {% set num_of_students  = num_of_students + 1 %}
+                {% set total = total + value2 %}
+
+                {% if value2 > {{Maximum_marks}} %}
+                    {% set Maximum_marks  = value2 %}
+                {% endif %}
+
+            {% end for %}
+          {% endif %}
+        {% end for %}
+
+        {% set average_marks  = ({{num_of_students}} / {{total}} ) %}
+
+        <tr>
+            <td> {{average_marks}} </td>
+            <td> {{Maximum_marks}} </td>
+        </tr>
+
+      
+    </table>
+  </body>
+</html>
