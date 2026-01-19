@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>
+      Student Data
+    </title>
+    <meta content="width=device-width" initial-scale="1.0" name="viewport"/>
+  </head>
+  <body>
+
+    <style>
+      table, th, td{
+        border: 1px solid black; 
+      }
+    </style>
+
+    <h1> Student Details </h1> 
+
+    <table>
+      <tr>
+        <th>
+          Student id 
+        </th>
+        <th>
+          Course id  
+        </th>
+        <th>
+          Marks
+        </th>
+      </tr>
+      {% set ns = namespace(sum=0) %}
+      {% for keys, values in student_data.items() %}
+        {% set ns.sum = ns.sum + values %}
+        <tr>
+            <td> {{ ID }} </td> 
+            <td> {{ keys }} </td> 
+            <td> {{ values }} </td> 
+        </tr>
+
+      {% endfor %}
+
+      <tr > 
+        <td colspan = 2 style = "text-align: center"> Total Marks </td> 
+        <td> {{ns.sum}} </td> 
+      </tr>
+    
+    </table>
+  </body>
+</html>

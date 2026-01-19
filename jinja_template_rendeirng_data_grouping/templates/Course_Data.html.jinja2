@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>
+      Course Data
+    </title>
+    <meta content="width=device-width" initial-scale="1.0" name="viewport"/>
+  </head>
+  <body>
+
+    <h1> Course Details </h1> 
+
+    <style> 
+      table, td, tr {
+        border: 1px solid black
+      }
+    </style>
+
+    {# calculating the maximum and sum of the marks #}
+
+    {% set ns = namespace(sum=0, max=0, count = 0) %}
+    {% for marks in course_data.values() %}
+
+      {% if marks > ns.max %}
+        {% set ns.max = marks %}
+      {% endif %}
+
+      {% set ns.sum = ns.sum +marks %}
+      {% set ns.count = ns.count + 1 %}
+
+    {% endfor %}
+
+    {% set Average = ns.sum / ns.count %}
+
+    <table>
+      <tr>
+        <th>
+          Average Marks
+        </th>
+        <th>
+          Maximum Marks
+        </th>
+      </tr>
+
+      <tr>
+        <td> {{ Average }} </td> 
+        <td> {{ ns.max }} </td> 
+      </tr>
+    </table>
+    <div>
+      <img src = "static/chart.png" alt = "Chart"> 
+    </div> 
+  </body>
+</html>
