@@ -25,7 +25,7 @@ A Flask-based web application that provides insights into student enrollment and
   - Average class performance
   - Grade distribution visualization (frequency chart)
  
-  - ## Student Information Management System
+## Student Information Management System - CRUD application 
 
 A full-stack Flask application with comprehensive CRUD operations for managing student records, course catalogs, and enrollment data.
 
