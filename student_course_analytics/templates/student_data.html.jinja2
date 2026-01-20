@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+</head>
+<body>
+
+    <h1> Student Details </h1>
+
+    <table border = '2' id = 'student-details-table'> 
+        <tr>
+            <th> Student Id </th>
+            <th> Course Id </th>
+            <th> Marks </th>
+        </tr>
+
+        {% set ns = namespace(sum=0) %}
+
+        {% for course, marks in student_dict.items() %}
+
+        <tr> 
+            <td> {{ student_id }} </td> 
+            <td> {{ course }} </td> 
+            <td> {{ marks }} </td> 
+            {% set ns.sum = ns.sum +  marks  %}
+        </tr>
+
+        {% endfor %}
+
+        <tr> 
+            <td colspan = 2 style = "text-align: center"  > Total Marks </td> 
+            <td> {{ ns.sum }}
+        </tr> 
+
+        
+    </table>
+</body>
+</html>

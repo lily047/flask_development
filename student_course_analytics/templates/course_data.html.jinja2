@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Data</title>
+</head>
+<body>
+    <h1> Course Details </h1>
+
+    {% set ns = namespace(sum=0,max=0, count=0) %}
+
+    {% for marks in course_dict.values() %}
+
+        {% set ns.sum = ns.sum + marks %}
+        {% set ns.count = ns.count + 1 %}
+
+        {% if marks > ns.max %}
+            {% set ns.max = marks %}
+        {% endif %}
+
+    {% endfor %}
+
+    {% set Average = ns.sum/ns.count %}
+
+    <table border = '2' id = 'Course_data_table'>
+        <tr> 
+            <th>Average Marks</th>
+            <th>Maximum Marks</th>
+        </tr>
+
+        <tr>
+            <td> {{ Average }} </td>
+            <td> {{ ns.max }} </td>
+        </tr>
+    </table>
+
+    <img src = 'static/chart.png' alt = "Chart" > 
+</body>
+</html>
