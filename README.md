@@ -12,3 +12,15 @@ Concepts covered:
 - Data grouping and structuring on the server side
 - Conditional rendering logic
 - Backend-to-template data flow
+
+
+## Student Performance Analytics Dashboard
+
+A Flask-based web application that provides insights into student enrollment and course performance metrics.
+
+**Key Features:**
+- **Student Lookup**: Query by Student ID to view all enrolled courses
+- **Course Analytics**: Query by Course ID to display:
+  - Maximum score achieved
+  - Average class performance
+  - Grade distribution visualization (frequency chart)
