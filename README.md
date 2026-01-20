@@ -24,3 +24,22 @@ A Flask-based web application that provides insights into student enrollment and
   - Maximum score achieved
   - Average class performance
   - Grade distribution visualization (frequency chart)
+ 
+  - ## Student Information Management System
+
+A full-stack Flask application with comprehensive CRUD operations for managing student records, course catalogs, and enrollment data.
+
+**Key Features:**
+- **Multi-table Relational Database**: Students, Courses, and Enrollments with proper foreign key relationships
+- **Complete CRUD Operations**: 
+  - Create new student records
+  - Read/display student information
+  - Update existing data via form inputs
+  - Delete student records from database
+- **Database Migration Management**: Implemented Flask-Migrate for version-controlled schema changes
+- **RESTful API Controllers**: Organized endpoints for handling form data and database operations
+- **Test-Driven Development**: Comprehensive pytest suite covering all application functionalities
+
+**Tech Stack:** Flask, SQLAlchemy, Flask-Migrate, pytest, HTML forms
+
+**Testing:** Implemented unit tests for each controller to ensure data integrity and proper CRUD functionality.
